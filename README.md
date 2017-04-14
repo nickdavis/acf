@@ -13,3 +13,4 @@ For now you can simply clone the GitHub repo and then include it in your project
 ## Credits
 
 Thanks to Tonya Mork and Alain Schlesser for the inspiration for this project.
+
