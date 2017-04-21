@@ -24,9 +24,8 @@ function autoload() {
 		'groups/hero.php',
 		'groups/rows.php',
 
-		'layouts/columns-two.php',
-		'layouts/content-blocks.php',
 		'layouts/hero.php',
+		'layouts/terms.php',
 	);
 
 	foreach ( $files as $file ) {

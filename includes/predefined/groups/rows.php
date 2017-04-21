@@ -47,6 +47,35 @@ function do_acf_rows_group( $key, $config ) {
 
 				include ND_ACF_DIR . 'views/groups/hero.php';
 
+				unset(
+					$title,
+					$text,
+					$button_text,
+					$button_link,
+					$text_after,
+					$background_image,
+					$background_image_src
+				);
+
+				break;
+
+			// Terms layout
+			case 'terms':
+				$title = get_post_meta( get_the_ID(), $key . '_' . $count . '_title', true );
+				$text  = get_post_meta( get_the_ID(), $key . '_' . $count . '_text', true );
+				$terms = get_post_meta( get_the_ID(), $key . '_' . $count . '_taxonomy', true );
+
+//				$button_text      = get_post_meta( get_the_ID(), $key . '_' . $count . '_button_text', true );
+//				$button_link      = get_post_meta( get_the_ID(), $key . '_' . $count . '_button_link', true );
+//				$text_after       = get_post_meta( get_the_ID(), $key . '_' . $count . '_text_after', true );
+//				$background_image = get_post_meta( get_the_ID(), $key . '_' . $count . '_background_image', true );
+
+//				if ( isset( $background_image ) ) {
+//					$background_image_src = wp_get_attachment_image_src( $background_image, 'full' );
+//				}
+
+				include ND_ACF_DIR . 'views/groups/terms.php';
+
 				break;
 		}
 	}
