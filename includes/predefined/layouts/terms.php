@@ -12,26 +12,28 @@
 namespace NickDavis\ACF\Predefined;
 
 function get_acf_terms_layout() {
+	$key = 'terms';
+
 	return array(
-		'key'        => 'terms',
-		'name'       => 'terms',
+		'key'        => $key,
+		'name'       => $key,
 		'label'      => 'Terms',
 		'display'    => 'block',
 		'sub_fields' => array(
 			array(
-				'key'   => 'title',
+				'key'   => $key . '_title',
 				'label' => 'Title',
-				'name'  => 'title',
+				'name'  => $key . '_title',
 				'type'  => 'text',
 			),
 			array(
-				'key'   => 'text',
+				'key'   => $key . '_text',
 				'label' => 'Text',
-				'name'  => 'text',
+				'name'  => $key . '_text',
 				'type'  => 'textarea',
 			),
 			array(
-				'key'               => 'taxonomy',
+				'key'               => $key . '_taxonomy',
 				'label'             => 'Taxonomy',
 				'name'              => 'taxonomy',
 				'type'              => 'repeater',
