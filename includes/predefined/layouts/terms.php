@@ -28,7 +28,7 @@ function get_acf_terms_layout() {
 				'key'   => 'text',
 				'label' => 'Text',
 				'name'  => 'text',
-				'type'  => 'text',
+				'type'  => 'textarea',
 			),
 			array(
 				'key'               => 'taxonomy',
