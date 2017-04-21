@@ -25,6 +25,7 @@ function autoload() {
 		'groups/rows.php',
 
 		'layouts/hero.php',
+		'layouts/posts.php',
 		'layouts/terms.php',
 	);
 

@@ -11,6 +11,8 @@
 
 namespace NickDavis\ACF\Predefined;
 
+use WP_Query;
+
 function get_acf_rows_group( $key, $config ) {
 	$args = array();
 	$args = $config['args'];
@@ -59,8 +61,44 @@ function do_acf_rows_group( $key, $config ) {
 
 				break;
 
+			// Posts layout
+			case 'posts':
+				$case = 'posts';
+
+				$title   = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_title', true );
+				$text    = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_text', true );
+				$posts   = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_posts', true );
+				$classes = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_classes', true );
+
+				if ( isset( $posts ) ) {
+					$show_excerpts = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_show_excerpts', true );
+					$show_images   = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_show_images', true );
+					$read_more     = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_read_more', true );
+
+					$post_ids = array();
+
+					for ( $posts_count = 0; $posts_count < $posts; $posts_count ++ ) {
+						$post_ids[] = get_post_meta( get_the_ID(), $key . '_' . $count . '_posts_posts_' . $posts_count . '_post', true );
+					}
+
+					$args_for_posts_query = array(
+						'orderby'   => 'post__in',
+						'post_type' => 'any',
+						'post__in'  => $post_ids,
+					);
+
+					$posts_query = new WP_Query( $args_for_posts_query );
+				}
+
+				include ND_ACF_DIR . 'views/posts.php';
+
+				wp_reset_postdata();
+
+				break;
+
 			// Terms layout
-			case 'terms':
+			case
+			'terms':
 				$case = 'terms';
 
 				$title = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_title', true );
