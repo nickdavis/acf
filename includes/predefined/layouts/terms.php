@@ -35,7 +35,7 @@ function get_acf_terms_layout() {
 			array(
 				'key'               => $key . '_taxonomy',
 				'label'             => 'Taxonomy',
-				'name'              => 'taxonomy',
+				'name'              => $key . '_taxonomy',
 				'type'              => 'repeater',
 				'layout'            => 'table',
 				'button_label'      => '',
