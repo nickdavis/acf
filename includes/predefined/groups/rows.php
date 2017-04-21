@@ -28,7 +28,7 @@ function do_acf_rows_group( $key, $config ) {
 		return;
 	}
 
-	include ND_ACF_DIR . 'views/groups/rows-open.php';
+	include ND_ACF_DIR . 'views/rows-open.php';
 
 	foreach ( (array) $rows as $count => $row ) {
 		switch ( $row ) {
@@ -45,7 +45,7 @@ function do_acf_rows_group( $key, $config ) {
 					$background_image_src = wp_get_attachment_image_src( $background_image, 'full' );
 				}
 
-				include ND_ACF_DIR . 'views/groups/hero.php';
+				include ND_ACF_DIR . 'views/hero.php';
 
 				unset(
 					$title,
@@ -74,11 +74,11 @@ function do_acf_rows_group( $key, $config ) {
 //					$background_image_src = wp_get_attachment_image_src( $background_image, 'full' );
 //				}
 
-				include ND_ACF_DIR . 'views/groups/terms.php';
+				include ND_ACF_DIR . 'views/terms.php';
 
 				break;
 		}
 	}
 
-	include ND_ACF_DIR . 'views/groups/rows-close.php';
+	include ND_ACF_DIR . 'views/rows-close.php';
 }

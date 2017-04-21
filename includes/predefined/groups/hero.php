@@ -46,5 +46,5 @@ function do_acf_hero_group( $key, $config ) {
 		$background_image_src = wp_get_attachment_image_src( $background_image, 'full' );
 	}
 
-	include ND_ACF_DIR . 'views/groups/hero.php';
+	include ND_ACF_DIR . 'views/hero.php';
 }
