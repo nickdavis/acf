@@ -1,5 +1,5 @@
 <div
-	class="<?php echo $key; ?>-row row row-terms terms-count-<?php echo $terms; ?>"
+	class="<?php echo $key; ?>-row acf-row row-terms terms-count-<?php echo $terms; ?>"
 	<?php echo isset( $background_image_src ) ? 'style="background-image: url(' . $background_image_src[0] . ')"' : '' ?>>
 	<div class="wrap">
 		<?php if ( $title ) : ?>

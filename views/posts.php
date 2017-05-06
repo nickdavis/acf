@@ -1,5 +1,5 @@
 <div
-	class="<?php echo $key; ?>-row row row-posts posts-count-<?php echo $posts; ?> <?php esc_attr_e( $classes ); ?>"
+	class="<?php echo $key; ?>-row acf-row row-posts posts-count-<?php echo $posts; ?> <?php esc_attr_e( $classes ); ?>"
 	<?php echo isset( $background_image_src ) ? 'style="background-image: url(' . $background_image_src[0] . ')"' : '' ?>>
 	<div class="wrap">
 
