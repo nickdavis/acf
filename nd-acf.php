@@ -11,7 +11,58 @@
 
 namespace NickDavis\ACF;
 
-define( 'ND_ACF_LIBRARY', __FILE__ );
-define( 'ND_ACF_DIR', trailingslashit(__DIR__ ) );
+/**
+ * Checks if package is already loaded and bails, if so.
+ *
+ * @since 1.0.0
+ */
+if ( defined( 'ND_ACF_LOADED' ) ) {
+	return;
+}
 
-require_once __DIR__ . '/includes/predefined/module.php';
+/**
+ * Sets up the packages's constants.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function init_constants() {
+	$package_url = plugin_dir_url( __FILE__ );
+	if ( is_ssl() ) {
+		$package_url = str_replace( 'http://', 'https://', $package_url );
+	}
+
+	define( 'ND_ACF_LOADED', true );
+	define( 'ND_ACF_VERSION', '1.0.0' );
+	define( 'ND_ACF_DIR', trailingslashit( plugin_dir_path( __FILE__ ) ) );
+	define( 'ND_ACF_URL', $package_url );
+	define( 'ND_ACF_FILE', __FILE__ );
+}
+
+/**
+ * Kicks off the package by initializing the package files.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function init_autoloader() {
+	require_once( 'includes/autoload.php' );
+
+	autoload();
+}
+
+/**
+ * Launches the package.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function launch() {
+	init_autoloader();
+}
+
+init_constants();
+launch();
