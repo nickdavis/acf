@@ -9,8 +9,6 @@
  * @license     GNU General Public License 2.0+
  */
 
-/** Dummy commit */
-
 namespace NickDavis\ACF;
 
 define( 'ND_ACF_LIBRARY', __FILE__ );
