@@ -1,5 +1,5 @@
 <div
-	class="<?php echo $key; ?>-row row row-hero"
+	class="<?php echo $key; ?>-row row-hero acf-row"
 	<?php echo isset( $background_image_src ) ? 'style="background-image: url(' . $background_image_src[0] . ')"' : ''?>>
 	<div class="wrap">
 		<?php if ( $title ) : ?>
