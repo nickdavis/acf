@@ -1,5 +1,7 @@
+<?php use function NickDavis\ACF\Predefined\underscores_to_hypens; ?>
+
 <div
-	class="<?php echo $key; ?>-row row-hero acf-row"
+	class="<?php echo underscores_to_hypens( $key ); ?>-row row-hero acf-row"
 	<?php echo isset( $background_image_src ) ? 'style="background-image: url(' . $background_image_src[0] . ')"' : ''?>>
 	<div class="wrap">
 		<?php if ( $title ) : ?>

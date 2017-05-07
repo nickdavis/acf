@@ -26,3 +26,16 @@ function label_cleanup( $label ) {
 
 	return $label;
 }
+
+/**
+ * Converts all underscores in the given string to hypens and then returns it.
+ *
+ * @since 1.0.0
+ *
+ * @param string $string
+ *
+ * @return string
+ */
+function underscores_to_hypens( $string ) {
+	return str_replace( '_', '-', $string );
+}
