@@ -33,6 +33,15 @@ function do_acf_hero_group( $key, $config ) {
 		return;
 	}
 
+	$custom_classes = $config['view'];
+
+	$default_classes = array(
+		'title_tag'      => 'h2',
+		'button_classes' => 'button',
+	);
+
+	$classes = process_custom_acf_classes( $default_classes, $custom_classes );
+
 	/**
 	 * Set field names dynamically.
 	 *

@@ -140,6 +140,28 @@ function process_predefined_acf_fields( $key, $predefined_fields, $sub_fields = 
 }
 
 /**
+ * Merges or adds custom CSS classes with default classes for this view.
+ *
+ * @since 1.0.0
+ *
+ * @param $classes The default classes for this view
+ * @param $custom_classes Any custom classes for this view
+ *
+ * @return array Merged CSS classes
+ */
+function process_custom_acf_classes( $classes, $custom_classes ) {
+	if ( ! empty ( $custom_classes['title_tag'] ) ) {
+		$classes['title_tag'] = $custom_classes['title_tag'];
+	}
+
+	if ( ! empty ( $custom_classes['button_classes'] ) ) {
+		$classes['button_classes'] .= $custom_classes['button_classes'];
+	}
+
+	return $classes;
+}
+
+/**
  * Process a view for an ACF field group.
  *
  * @since 1.0.0

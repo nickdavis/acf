@@ -5,7 +5,7 @@
 
 		<div class="row-posts-header">
 			<?php if ( $title ) : ?>
-				<h2><?php esc_html_e( $title ); ?></h2>
+				<h3><?php esc_html_e( $title ); ?></h3>
 			<?php endif; ?>
 
 			<?php if ( $text ) : ?>

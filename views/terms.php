@@ -3,7 +3,7 @@
 	<?php echo isset( $background_image_src ) ? 'style="background-image: url(' . $background_image_src[0] . ')"' : '' ?>>
 	<div class="wrap">
 		<?php if ( $title ) : ?>
-			<h2><?php esc_html_e( $title ); ?></h2>
+			<h3><?php esc_html_e( $title ); ?></h3>
 		<?php endif; ?>
 
 		<?php if ( $text ) : ?>

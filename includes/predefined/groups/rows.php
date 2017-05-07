@@ -47,6 +47,15 @@ function do_acf_rows_group( $key, $config ) {
 					$background_image_src = wp_get_attachment_image_src( $background_image, 'full' );
 				}
 
+				$custom_classes = $config['view'];
+
+				$default_classes = array(
+					'title_tag'      => 'h3',
+					'button_classes' => 'button',
+				);
+
+				$classes = process_custom_acf_classes( $default_classes, $custom_classes );
+
 				include ND_ACF_DIR . 'views/hero.php';
 
 				unset(

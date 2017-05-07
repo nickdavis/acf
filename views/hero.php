@@ -3,7 +3,9 @@
 	<?php echo isset( $background_image_src ) ? 'style="background-image: url(' . $background_image_src[0] . ')"' : ''?>>
 	<div class="wrap">
 		<?php if ( $title ) : ?>
-			<h2><?php esc_html_e( $title ); ?></h2>
+			<<?php echo $classes['title_tag']; ?>>
+				<?php esc_html_e( $title ); ?>
+			</<?php echo $classes['title_tag']; ?>>
 		<?php endif; ?>
 
 		<?php if ( $text ) : ?>
@@ -11,7 +13,7 @@
 		<?php endif; ?>
 
 		<?php if ( $button_text && $button_link ) : ?>
-			<a href="<?php echo esc_url( $button_link ); ?>" class="button">
+			<a href="<?php echo esc_url( $button_link ); ?>" class="<?php esc_attr_e( $classes['button_classes'] ); ?>">
 				<?php esc_html_e( $button_text ); ?>
 			</a>
 		<?php endif; ?>
