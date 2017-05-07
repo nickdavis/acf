@@ -22,13 +22,13 @@
 	<?php endif; ?>
 
 		<?php if ( $terms ) : ?>
-			<div class="row-terms-terms">
+			<div class="row-terms-terms row expanded large-up-5">
 				<?php for ( $terms_count = 0; $terms_count < $terms; $terms_count ++ ) :
 					$term_id = get_post_meta( get_the_ID(), $key . '_' . $count . '_terms_taxonomy_' . $terms_count . '_term', true );
 					$term = get_term( $term_id );
 					?>
 
-					<div class="row-terms-term">
+					<div class="row-terms-term columns">
 						<h5>
 							<a href="<?php echo get_term_link( $term ); ?>"><?php esc_html_e( $term->name ); ?></a>
 						</h5>
