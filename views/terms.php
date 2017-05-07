@@ -4,13 +4,22 @@
 	class="<?php echo underscores_to_hypens( $key ); ?>-row acf-row row-terms terms-count-<?php echo $terms; ?>"
 	<?php echo isset( $background_image_src ) ? 'style="background-image: url(' . $background_image_src[0] . ')"' : '' ?>>
 	<div class="wrap">
-		<?php if ( $title ) : ?>
-			<h3><?php esc_html_e( $title ); ?></h3>
-		<?php endif; ?>
 
-		<?php if ( $text ) : ?>
-			<p><?php echo nl2br( esc_html( $text ) ); ?></p>
-		<?php endif; ?>
+		<?php if ( $title || $text ) : ?>
+		<div class="row-terms__header">
+			<?php endif; ?>
+
+			<?php if ( $title ) : ?>
+				<h3 class="row-terms__title"><?php esc_html_e( $title ); ?></h3>
+			<?php endif; ?>
+
+			<?php if ( $text ) : ?>
+				<p><?php echo nl2br( esc_html( $text ) ); ?></p>
+			<?php endif; ?>
+
+			<?php if ( $title || $text ) : ?>
+		</div>
+	<?php endif; ?>
 
 		<?php if ( $terms ) : ?>
 			<div class="row-terms-terms">
