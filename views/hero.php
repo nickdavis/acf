@@ -5,7 +5,7 @@
 	<?php echo isset( $background_image_src ) ? 'style="background-image: url(' . $background_image_src[0] . ')"' : ''?>>
 	<div class="wrap">
 		<?php if ( $title ) : ?>
-			<<?php echo $classes['title_tag']; ?>>
+			<<?php echo $classes['title_tag']; ?> class="<?php echo underscores_to_hypens( $key ); ?>-row-title">
 				<?php esc_html_e( $title ); ?>
 			</<?php echo $classes['title_tag']; ?>>
 		<?php endif; ?>
