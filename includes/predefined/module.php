@@ -155,7 +155,7 @@ function process_custom_acf_classes( $classes, $custom_classes ) {
 	}
 
 	if ( ! empty ( $custom_classes['button_classes'] ) ) {
-		$classes['button_classes'] .= $custom_classes['button_classes'];
+		$classes['button_classes'] .= ' ' . $custom_classes['button_classes'];
 	}
 
 	return $classes;
