@@ -1,4 +1,7 @@
-<?php use function NickDavis\ACF\Predefined\underscores_to_hypens; ?>
+<?php
+use function NickDavis\ACF\Predefined\the_first_term_image;
+use function NickDavis\ACF\Predefined\underscores_to_hypens;
+?>
 
 <div
 	class="<?php echo underscores_to_hypens( $key ); ?>-row acf-row row-terms terms-count-<?php echo $terms; ?>"
@@ -29,6 +32,7 @@
 					?>
 
 					<div class="row-terms-term columns">
+						<?php the_first_term_image( $term_id ); ?>
 						<h6>
 							<a href="<?php echo get_term_link( $term ); ?>"><?php esc_html_e( $term->name ); ?></a>
 						</h6>
