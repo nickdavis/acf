@@ -24,9 +24,9 @@
 								<?php the_post_thumbnail( 'content-block-x3' ); ?>
 							</a>
 						<?php endif ?>
-						<h5>
+						<h6>
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-						</h5>
+						</h6>
 						<?php if ( ! empty ( $show_excerpts ) ) {
 							the_excerpt();
 						} ?>

@@ -29,9 +29,9 @@
 					?>
 
 					<div class="row-terms-term columns">
-						<h5>
+						<h6>
 							<a href="<?php echo get_term_link( $term ); ?>"><?php esc_html_e( $term->name ); ?></a>
-						</h5>
+						</h6>
 					</div>
 
 				<?php endfor; ?>
