@@ -16,9 +16,9 @@
 		</div>
 
 		<?php if ( $posts_query->have_posts() ) : ?>
-			<div class="row-posts-posts">
+			<div class="row-posts-posts row">
 				<?php while ( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
-					<div class="row-posts-post">
+					<div class="row-posts-post columns large-4">
 						<?php if ( ! empty ( $show_images ) ) : ?>
 							<a href="<?php the_permalink(); ?>">
 								<?php the_post_thumbnail( 'content-block-x3' ); ?>
@@ -32,7 +32,7 @@
 						} ?>
 						<?php if ( ! empty ( $read_more ) ) : ?>
 							<a href="<?php the_permalink(); ?>"
-							   class="read-more">
+							   class="button tiny">
 								<?php esc_html_e( $read_more ); ?>
 							</a>
 						<?php endif; ?>
