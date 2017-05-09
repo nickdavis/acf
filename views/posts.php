@@ -21,7 +21,7 @@
 					<div class="row-posts-post columns large-4">
 						<?php if ( ! empty ( $show_images ) ) : ?>
 							<a href="<?php the_permalink(); ?>">
-								<?php the_post_thumbnail( 'content-block-x3' ); ?>
+								<?php the_post_thumbnail( 'content-block-x3', ['class' => 'row-posts__image' ] ); ?>
 							</a>
 						<?php endif ?>
 						<h6>
