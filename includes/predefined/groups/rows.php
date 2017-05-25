@@ -34,6 +34,33 @@ function do_acf_rows_group( $key, $config ) {
 
 	foreach ( (array) $rows as $count => $row ) {
 		switch ( $row ) {
+			// Columns layout
+			case 'columns':
+				$title       = get_post_meta( get_the_ID(), $key . '_' . $count . '_title', true );
+				$columns     = get_post_meta( get_the_ID(), $key . '_' . $count . '_column', true );
+				$button_text = get_post_meta( get_the_ID(), $key . '_' . $count . '_button_text', true );
+				$button_link = get_post_meta( get_the_ID(), $key . '_' . $count . '_button_link', true );
+
+				$custom_classes = $config['view'];
+
+				$default_classes = array(
+					'title_tag'      => 'h2',
+					'button_classes' => 'button',
+				);
+
+				$classes = process_custom_acf_classes( $default_classes, $custom_classes );
+
+				include ND_ACF_DIR . 'views/columns.php';
+
+				unset(
+					$title,
+					$columns,
+					$button_text,
+					$button_link
+				);
+
+				break;
+
 			// Hero layout
 			case 'hero':
 				$title            = get_post_meta( get_the_ID(), $key . '_' . $count . '_title', true );
