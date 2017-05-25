@@ -50,7 +50,7 @@ function get_acf_columns_layout() {
 				'min'               => 0,
 				'max'               => 2,
 				'layout'            => 'table',
-				'button_label'      => '',
+				'button_label'      => 'Add Column',
 				'sub_fields'        => array(
 					array(
 						'key'               => 'field_5926cdc082e88',

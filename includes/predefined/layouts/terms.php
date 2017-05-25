@@ -38,7 +38,7 @@ function get_acf_terms_layout() {
 				'name'              => $key . '_taxonomy',
 				'type'              => 'repeater',
 				'layout'            => 'table',
-				'button_label'      => '',
+				'button_label'      => 'Add Term',
 				'sub_fields'        => array(
 					array(
 						'key'               => 'term',
