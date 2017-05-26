@@ -80,7 +80,9 @@ function register_acf_field_group( $type, $key, $config ) {
 	$args = array();
 	$args = process_predefined_acf_groups( $type, $key, $config );
 
-	acf_add_local_field_group( $args );
+	if( function_exists('acf_add_local_field_group') ) {
+		acf_add_local_field_group( $args );
+	}
 }
 
 function process_predefined_acf_groups( $type, $key, array $config ) {
