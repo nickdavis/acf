@@ -15,11 +15,11 @@
 		<?php endif; ?>
 
 		<?php if ( $button_text && $button_link ) : ?>
-			<p class="row-hero-call-to-action">
+			<div class="row-hero-call-to-action">
 				<a href="<?php echo esc_url( $button_link ); ?>" class="<?php esc_attr_e( $classes['button_classes'] ); ?>">
 					<?php esc_html_e( $button_text ); ?>
 				</a>
-			</p>
+			</div>
 		<?php endif; ?>
 
 		<?php if ( ! empty( $text_after ) ) : ?>
