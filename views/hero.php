@@ -21,7 +21,7 @@
 		<?php endif; ?>
 
 		<?php if ( ! empty( $text_after ) ) : ?>
-			<p class="row-hero-text-after"><?php esc_html_e( $text_after ); ?></p>
+			<p class="row-hero-text-after"><?php echo wp_kses_post( $text_after ); ?></p>
 		<?php endif; ?>
 	</div>
 </div>
