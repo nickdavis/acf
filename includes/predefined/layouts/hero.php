@@ -28,7 +28,7 @@ function get_acf_hero_layout() {
 				'key'   => 'text',
 				'label' => 'Text',
 				'name'  => 'text',
-				'type'  => 'text',
+				'type'  => 'wysiwyg',
 			),
 			array(
 				'key'   => 'button_text',

@@ -11,13 +11,15 @@
 		<?php endif; ?>
 
 		<?php if ( $text ) : ?>
-			<p><?php esc_html_e( $text ); ?></p>
+			<?php echo wp_kses_post( wpautop( $text ) ); ?>
 		<?php endif; ?>
 
 		<?php if ( $button_text && $button_link ) : ?>
-			<a href="<?php echo esc_url( $button_link ); ?>" class="<?php esc_attr_e( $classes['button_classes'] ); ?>">
-				<?php esc_html_e( $button_text ); ?>
-			</a>
+			<p class="row-hero-call-to-action">
+				<a href="<?php echo esc_url( $button_link ); ?>" class="<?php esc_attr_e( $classes['button_classes'] ); ?>">
+					<?php esc_html_e( $button_text ); ?>
+				</a>
+			</p>
 		<?php endif; ?>
 
 		<?php if ( ! empty( $text_after ) ) : ?>
