@@ -49,7 +49,7 @@ function get_acf_columns_layout() {
 				'collapsed'         => '',
 				'min'               => 0,
 				'max'               => 2,
-				'layout'            => 'table',
+				'layout'            => 'row',
 				'button_label'      => 'Add Column',
 				'sub_fields'        => array(
 					array(
