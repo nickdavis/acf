@@ -1,7 +1,7 @@
 <?php use function NickDavis\ACF\Predefined\underscores_to_hypens; ?>
 
 <div
-	class="<?php echo underscores_to_hypens( $key ); ?>-row row-columns acf-row"
+	class="<?php echo underscores_to_hypens( $key ); ?>-row row-columns acf-row<?= ! empty( $background_color_row ) ? ' row-columns--has-background-color' : ''; ?>"
 	style="
 	<?= ! empty( $background_color_row ) && empty( $background_color_row_bottom ) ? 'background-color: ' . $background_color_row . ';' : ''; ?>
 	<?= ! empty( $background_color_row ) && ! empty( $background_color_row_bottom ) ? 'background: linear-gradient(' . $background_color_row . ', ' . $background_color_row_bottom . ');' : ''; ?>
@@ -25,7 +25,7 @@
 			$text = get_post_meta( get_the_ID(), $key . '_' . $count . '_column_' . $columns_count . '_text', true );
 			?>
 			<div
-				class="medium-6 columns"
+				class="medium-6 columns<?= ! empty( $background_color ) ? ' columns--has-background-color' : ''; ?>"
 				style="
 				<?= ! empty( $background_color ) ? 'background-color: ' . $background_color . ';' : ''; ?>
 				<?= ! empty( $background_image_url ) ? 'background-image: url(' . $background_image_url . ');' : ''; ?>
