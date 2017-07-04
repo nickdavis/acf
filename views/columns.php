@@ -1,7 +1,7 @@
 <?php use function NickDavis\ACF\Predefined\underscores_to_hypens; ?>
 
 <div
-	class="<?php echo underscores_to_hypens( $key ); ?>-row row-columns acf-row<?= ! empty( $background_color_row ) ? ' row-columns--has-background-color' : ''; ?>"
+	class="<?php echo underscores_to_hypens( $key ); ?>-row row-columns acf-row<?= ! empty( $background_color_row ) ? ' row-columns--has-background-color' : ''; ?><?= ! empty( $title ) ? ' row-columns--has-title' : ''; ?><?= ! empty( $button_text ) && ! empty( $button_link ) ? ' row-columns--has-button' : ''; ?>"
 	style="
 	<?= ! empty( $background_color_row ) && empty( $background_color_row_bottom ) ? 'background-color: ' . $background_color_row . ';' : ''; ?>
 	<?= ! empty( $background_color_row ) && ! empty( $background_color_row_bottom ) ? 'background: linear-gradient(' . $background_color_row . ', ' . $background_color_row_bottom . ');' : ''; ?>
