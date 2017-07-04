@@ -2,7 +2,10 @@
 
 <div
 	class="<?php echo underscores_to_hypens( $key ); ?>-row row-columns acf-row"
-	<?php echo isset( $background_image_src ) ? 'style="background-image: url(' . $background_image_src[0] . ')"' : '' ?>>
+	style="
+	<?= ! empty( $background_color_row ) && empty( $background_color_row_bottom ) ? 'background-color: ' . $background_color_row . ';' : ''; ?>
+	<?= ! empty( $background_color_row ) && ! empty( $background_color_row_bottom ) ? 'background: linear-gradient(' . $background_color_row . ', ' . $background_color_row_bottom . ');' : ''; ?>
+		">
 	<?php if ( $title ) : ?>
 	<<?php echo $classes['title_tag']; ?>
 	class="<?php echo underscores_to_hypens( $key ); ?>-row-title">

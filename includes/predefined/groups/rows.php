@@ -36,10 +36,12 @@ function do_acf_rows_group( $key, $config ) {
 		switch ( $row ) {
 			// Columns layout
 			case 'columns':
-				$title       = get_post_meta( get_the_ID(), $key . '_' . $count . '_title', true );
-				$columns     = get_post_meta( get_the_ID(), $key . '_' . $count . '_column', true );
-				$button_text = get_post_meta( get_the_ID(), $key . '_' . $count . '_button_text', true );
-				$button_link = get_post_meta( get_the_ID(), $key . '_' . $count . '_button_link', true );
+				$background_color_row        = get_post_meta( get_the_ID(), $key . '_' . $count . '_background_color', true );
+				$background_color_row_bottom = get_post_meta( get_the_ID(), $key . '_' . $count . '_background_color_bottom', true );
+				$title                   = get_post_meta( get_the_ID(), $key . '_' . $count . '_title', true );
+				$columns                 = get_post_meta( get_the_ID(), $key . '_' . $count . '_column', true );
+				$button_text             = get_post_meta( get_the_ID(), $key . '_' . $count . '_button_text', true );
+				$button_link             = get_post_meta( get_the_ID(), $key . '_' . $count . '_button_link', true );
 
 				$custom_classes = $config['view'];
 
