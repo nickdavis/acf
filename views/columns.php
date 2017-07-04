@@ -6,6 +6,7 @@
 	<?= ! empty( $background_color_row ) && empty( $background_color_row_bottom ) ? 'background-color: ' . $background_color_row . ';' : ''; ?>
 	<?= ! empty( $background_color_row ) && ! empty( $background_color_row_bottom ) ? 'background: linear-gradient(' . $background_color_row . ', ' . $background_color_row_bottom . ');' : ''; ?>
 		">
+
 	<?php if ( $title ) : ?>
 	<<?php echo $classes['title_tag']; ?>
 	class="<?php echo underscores_to_hypens( $key ); ?>-row-title">
@@ -14,7 +15,7 @@
 <?php endif; ?>
 
 <?php if ( $columns ) : ?>
-	<div class="row expanded">
+	<div class="row<?= empty( $background_color_row ) ? ' expanded' : ''; ?>">
 		<?php for ( $columns_count = 0; $columns_count < $columns; $columns_count ++ ) : ?>
 			<?php
 			$background_color    = get_post_meta( get_the_ID(), $key . '_' . $count . '_column_' . $columns_count . '_background_color', true );
@@ -55,4 +56,5 @@
 <?php if ( ! empty( $text_after ) ) : ?>
 	<p class="row-hero-text-after"><?php esc_html_e( $text_after ); ?></p>
 <?php endif; ?>
+
 </div>
