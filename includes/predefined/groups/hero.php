@@ -42,6 +42,8 @@ function do_acf_hero_group( $key, $config ) {
 
 	$classes = process_custom_acf_classes( $default_classes, $custom_classes );
 
+	$empty_fields_count = 0;
+
 	/**
 	 * Set field names dynamically.
 	 *
@@ -49,6 +51,14 @@ function do_acf_hero_group( $key, $config ) {
 	 */
 	foreach ( $predefined_fields as $field ) {
 		${$field} = get_post_meta( get_the_ID(), $key . '_' . $field, true );
+
+		if ( empty( ${$field} ) ) {
+			$empty_fields_count++;
+		}
+	}
+
+	if ( $empty_fields_count === count( $predefined_fields ) ) {
+		return;
 	}
 
 	if ( isset( $background_image ) ) {
