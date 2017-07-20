@@ -29,6 +29,10 @@ use function NickDavis\ACF\Predefined\underscores_to_hypens;
 				<?php for ( $terms_count = 0; $terms_count < $terms; $terms_count ++ ) :
 					$term_id = get_post_meta( get_the_ID(), $key . '_' . $count . '_terms_taxonomy_' . $terms_count . '_term', true );
 					$term = get_term( $term_id );
+
+					if ( is_wp_error( $term ) || empty( $term ) ) {
+						continue;
+					}
 					?>
 
 					<div class="row-terms-term columns">
