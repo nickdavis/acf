@@ -27,6 +27,7 @@ function autoload() {
 		'layouts/columns.php',
 		'layouts/hero.php',
 		'layouts/posts.php',
+		'layouts/pricing-table.php',
 		'layouts/terms.php',
 	);
 

@@ -134,6 +134,27 @@ function do_acf_rows_group( $key, $config ) {
 
 				break;
 
+			// Pricing Table layout
+			case
+				'pricing-table':
+				$case = 'pricing-table';
+
+				$title                   = get_post_meta( get_the_ID(), $key . '_' . $count . '_title', true );
+				$text                    = get_post_meta( get_the_ID(), $key . '_' . $count . '_text', true );
+				$columns                 = get_post_meta( get_the_ID(), $key . '_' . $count . '_column', true );
+
+				//$background_color_row        = get_post_meta( get_the_ID(), $key . '_' . $count . '_background_color', true );
+				//$background_color_row_bottom = get_post_meta( get_the_ID(), $key . '_' . $count . '_background_color_bottom', true );
+				$background_image = get_post_meta( get_the_ID(), $key . '_' . $count . '_background_image', true );
+
+				if ( isset( $background_image ) ) {
+					$background_image_src = wp_get_attachment_image_src( $background_image, 'full' );
+				}
+
+				include ND_ACF_DIR . 'views/pricing-table.php';
+
+				break;
+
 			// Terms layout
 			case
 			'terms':
