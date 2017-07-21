@@ -43,6 +43,10 @@ function do_acf_rows_group( $key, $config ) {
 				$button_text             = get_post_meta( get_the_ID(), $key . '_' . $count . '_button_text', true );
 				$button_link             = get_post_meta( get_the_ID(), $key . '_' . $count . '_button_link', true );
 
+				if ( ! empty( $columns ) ) {
+					$column_grid_class = columns_class_calculator( $columns );
+				}
+
 				$custom_classes = $config['view'];
 
 				$default_classes = array(

@@ -26,14 +26,18 @@
 			$text = get_post_meta( get_the_ID(), $key . '_' . $count . '_column_' . $columns_count . '_text', true );
 			?>
 			<div
-				class="medium-6 columns<?= ! empty( $background_color ) ? ' columns--has-background-color' : ''; ?>"
+				class="<?= $column_grid_class; ?> columns<?= ! empty( $background_color ) ? ' columns--has-background-color' : ''; ?>"
 				style="
 				<?= ! empty( $background_color ) ? 'background-color: ' . $background_color . ';' : ''; ?>
 				<?= ! empty( $background_image_url ) ? 'background-image: url(' . $background_image_url . ');' : ''; ?>
 					">
+				<?php if ( $columns > 1 ) : ?>
 				<div class="columns-inner">
+				<?php endif; ?>
 					<?php echo wpautop( $text ); ?>
+				<?php if ( $columns > 1 ) : ?>
 				</div>
+				<?php endif; ?>
 			</div>
 			<?php unset(
 				$background_color,
