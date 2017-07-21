@@ -42,7 +42,9 @@ use function NickDavis\ACF\Predefined\underscores_to_hypens;
 					<div class="row-pricing-table__column__header">
 						<h4 class="row-pricing-table__column__title"><?= esc_html( $title ); ?></h4>
 						<p class="row-pricing-table__column__price"><?= $price; ?></p>
-						<a class="row-pricing-table__column__button button small" href="<?= esc_url( $button_url ); ?>"><?= esc_html( $button_text ); ?></a>
+						<?php if ( $button_text && $button_url ) : ?>
+							<a class="row-pricing-table__column__button button small" href="<?= esc_url( $button_url ); ?>"><?= esc_html( $button_text ); ?></a>
+						<?php endif; ?>
 						<p class="row-pricing-table__column__after-button-text"><?= esc_html( $after_button_text ); ?></p>
 					</div>
 
