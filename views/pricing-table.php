@@ -40,7 +40,7 @@ use function NickDavis\ACF\Predefined\underscores_to_hypens;
 					class="row-pricing-table__column <?= $column_grid_class; ?> columns">
 
 					<div class="row-pricing-table__column__header">
-						<h2 class="row-pricing-table__column__title"><?= esc_html( $title ); ?></h2>
+						<h4 class="row-pricing-table__column__title"><?= esc_html( $title ); ?></h4>
 						<p class="row-pricing-table__column__price"><?= $price; ?></p>
 						<a class="row-pricing-table__column__button button small" href="<?= esc_url( $button_url ); ?>"><?= esc_html( $button_text ); ?></a>
 						<p class="row-pricing-table__column__after-button-text"><?= esc_html( $after_button_text ); ?></p>
