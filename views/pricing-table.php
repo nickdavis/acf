@@ -37,7 +37,7 @@ use function NickDavis\ACF\Predefined\underscores_to_hypens;
 				$benefits = get_post_meta( get_the_ID(), $key . '_' . $count . '_column_' . $columns_count . '_benefits', true );
 				?>
 				<div
-					class="row-pricing-table__column medium-4 columns">
+					class="row-pricing-table__column <?= $column_grid_class; ?> columns">
 
 					<div class="row-pricing-table__column__header">
 						<h2 class="row-pricing-table__column__title"><?= esc_html( $title ); ?></h2>

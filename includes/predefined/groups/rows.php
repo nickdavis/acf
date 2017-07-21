@@ -139,9 +139,11 @@ function do_acf_rows_group( $key, $config ) {
 				'pricing-table':
 				$case = 'pricing-table';
 
-				$title                   = get_post_meta( get_the_ID(), $key . '_' . $count . '_title', true );
-				$text                    = get_post_meta( get_the_ID(), $key . '_' . $count . '_text', true );
-				$columns                 = get_post_meta( get_the_ID(), $key . '_' . $count . '_column', true );
+				$title    = get_post_meta( get_the_ID(), $key . '_' . $count . '_title', true );
+				$text     = get_post_meta( get_the_ID(), $key . '_' . $count . '_text', true );
+				$columns  = get_post_meta( get_the_ID(), $key . '_' . $count . '_column', true );
+
+				$column_grid_class = columns_class_calculator( $columns );
 
 				//$background_color_row        = get_post_meta( get_the_ID(), $key . '_' . $count . '_background_color', true );
 				//$background_color_row_bottom = get_post_meta( get_the_ID(), $key . '_' . $count . '_background_color_bottom', true );
@@ -171,4 +173,24 @@ function do_acf_rows_group( $key, $config ) {
 	}
 
 	include ND_ACF_DIR . 'views/rows-close.php';
+}
+
+/**
+ * Calculates the correct Foundation Sites CSS grid class for the number
+ * of columns.
+ *
+ * @since 1.0.0
+ */
+function columns_class_calculator( $number_of_columns ) {
+	if ( 1 == $number_of_columns ) {
+		return;
+	} else if ( 2 == $number_of_columns ) {
+		return 'medium-6';
+	} else if ( 3 == $number_of_columns ) {
+		return 'medium-4';
+	} else if ( 4 == $number_of_columns ) {
+		return 'medium-3';
+	} else {
+		return 'medium-4';
+	}
 }
