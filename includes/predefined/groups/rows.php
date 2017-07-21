@@ -143,9 +143,9 @@ function do_acf_rows_group( $key, $config ) {
 				'pricing-table':
 				$case = 'pricing-table';
 
-				$title    = get_post_meta( get_the_ID(), $key . '_' . $count . '_title', true );
-				$text     = get_post_meta( get_the_ID(), $key . '_' . $count . '_text', true );
-				$columns  = get_post_meta( get_the_ID(), $key . '_' . $count . '_column', true );
+				$title    = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_title', true );
+				$text     = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_text', true );
+				$columns  = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_column', true );
 
 				$column_grid_class = columns_class_calculator( $columns );
 

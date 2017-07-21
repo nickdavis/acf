@@ -28,13 +28,13 @@ use function NickDavis\ACF\Predefined\underscores_to_hypens;
 			<?php for ( $columns_count = 0; $columns_count < $columns; $columns_count ++ ) : ?>
 				<?php
 
-				$title = get_post_meta( get_the_ID(), $key . '_' . $count . '_column_' . $columns_count . '_title', true );
-				$featured = get_post_meta( get_the_ID(), $key . '_' . $count . '_column_' . $columns_count . '_featured', true );
-				$price = get_post_meta( get_the_ID(), $key . '_' . $count . '_column_' . $columns_count . '_price', true );
-				$button_text = get_post_meta( get_the_ID(), $key . '_' . $count . '_column_' . $columns_count . '_button_text', true );
-				$button_url = get_post_meta( get_the_ID(), $key . '_' . $count . '_column_' . $columns_count . '_button_url', true );
-				$after_button_text = get_post_meta( get_the_ID(), $key . '_' . $count . '_column_' . $columns_count . '_after_button_text', true );
-				$benefits = get_post_meta( get_the_ID(), $key . '_' . $count . '_column_' . $columns_count . '_benefits', true );
+				$title = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_column_' . $columns_count . '_title', true );
+				$featured = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_column_' . $columns_count . '_featured', true );
+				$price = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_column_' . $columns_count . '_price', true );
+				$button_text = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_column_' . $columns_count . '_button_text', true );
+				$button_url = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_column_' . $columns_count . '_button_url', true );
+				$after_button_text = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_column_' . $columns_count . '_after_button_text', true );
+				$benefits = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_column_' . $columns_count . '_benefits', true );
 				?>
 				<div
 					class="row-pricing-table__column <?= $column_grid_class; ?> columns">
@@ -51,7 +51,7 @@ use function NickDavis\ACF\Predefined\underscores_to_hypens;
 					<?php if ( $benefits ) : ?>
 					<ul class="row-pricing-table__column__benefits">
 						<?php for ( $benefits_count = 0; $benefits_count < $benefits; $benefits_count ++ ) : ?>
-							<?php $benefit = get_post_meta( get_the_ID(), $key . '_' . $count . '_column_' . $columns_count . '_benefits_' . $benefits_count . '_benefit', true ); ?>
+							<?php $benefit = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_column_' . $columns_count . '_benefits_' . $benefits_count . '_benefit', true ); ?>
 							<li class="row-pricing-table__column__benefit"><?= esc_html( $benefit ); ?></li>
 						<?php endfor; ?>
 					</ul>
