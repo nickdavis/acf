@@ -151,7 +151,7 @@ function do_acf_rows_group( $key, $config ) {
 
 				//$background_color_row        = get_post_meta( get_the_ID(), $key . '_' . $count . '_background_color', true );
 				//$background_color_row_bottom = get_post_meta( get_the_ID(), $key . '_' . $count . '_background_color_bottom', true );
-				$background_image = get_post_meta( get_the_ID(), $key . '_' . $count . '_background_image', true );
+				$background_image = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_background_image', true );
 
 				if ( isset( $background_image ) ) {
 					$background_image_src = wp_get_attachment_image_src( $background_image, 'full' );
