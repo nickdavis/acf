@@ -16,7 +16,7 @@ use function NickDavis\ACF\Predefined\underscores_to_hypens;
 			<?php endif; ?>
 
 			<?php if ( $text ) : ?>
-				<p><?php echo nl2br( esc_html( $text ) ); ?></p>
+				<p class="row-pricing-table__text"><?php echo nl2br( esc_html( $text ) ); ?></p>
 			<?php endif; ?>
 
 			<?php if ( $title || $text ) : ?>
