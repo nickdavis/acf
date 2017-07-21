@@ -40,6 +40,10 @@ use function NickDavis\ACF\Predefined\underscores_to_hypens;
 					class="row-pricing-table__column <?= $column_grid_class; ?> columns">
 
 					<div class="row-pricing-table__column__header">
+						<?php if ( ! empty ( $featured ) ) : ?>
+							<div class="ribbon"><span>Best Value</span></div>
+						<?php endif; ?>
+
 						<h4 class="row-pricing-table__column__title"><?= esc_html( $title ); ?></h4>
 						<p class="row-pricing-table__column__price"><?= $price; ?></p>
 						<?php if ( $button_text && $button_url ) : ?>
