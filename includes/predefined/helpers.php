@@ -14,6 +14,21 @@ namespace NickDavis\ACF\Predefined;
 use WP_Query;
 
 /**
+ * Returns any image set by WP Term Image plugin
+ *
+ * @since 1.0.0
+ */
+function get_term_image( $term_id ) {
+	$image_id = get_term_meta( $term_id, 'image', true );
+
+	if ( empty( $image_id ) ) {
+		return;
+	}
+
+	return wp_get_attachment_image( $image_id, 'content-block' );
+}
+
+/**
  * Returns the first post image for a taxonomy term.
  *
  * @todo Make this dynamic, configurable (won't always be category).
