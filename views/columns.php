@@ -15,7 +15,7 @@
 <?php endif; ?>
 
 <?php if ( $columns ) : ?>
-	<div class="row<?= empty( $background_color_row ) ? ' expanded' : ''; ?>">
+	<div class="row<?= empty( $background_color_row ) ? ' expanded' : ''; ?><?= ! empty( $css_class ) ? ' ' . $css_class : ''; ?>">
 		<?php for ( $columns_count = 0; $columns_count < $columns; $columns_count ++ ) : ?>
 			<?php
 			$background_color    = get_post_meta( get_the_ID(), $key . '_' . $count . '_column_' . $columns_count . '_background_color', true );

@@ -64,6 +64,12 @@ function get_acf_columns_layout() {
 				'default_value'     => '',
 			),
 			array(
+				'key'   => $key . '_css_class',
+				'label' => 'CSS Class',
+				'name'  => 'css_class',
+				'type'  => 'text',
+			),
+			array(
 				'key'               => $key . 'column',
 				'label'             => 'Columns',
 				'name'              => 'column',
