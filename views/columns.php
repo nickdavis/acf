@@ -26,7 +26,7 @@
 			$text = get_post_meta( get_the_ID(), $key . '_' . $count . '_column_' . $columns_count . '_text', true );
 			?>
 			<div
-				class="<?= $column_grid_class; ?> columns<?= ! empty( $background_color ) ? ' columns--has-background-color' : ''; ?>"
+				class="<?= $column_grid_class; ?> columns<?= ! empty( $background_color ) ? ' columns--has-background-color' : ''; ?><?= ! empty( $background_image_url ) ? ' columns--has-background-image' : ''; ?>"
 				style="
 				<?= ! empty( $background_color ) ? 'background-color: ' . $background_color . ';' : ''; ?>
 				<?= ! empty( $background_image_url ) ? 'background-image: url(' . $background_image_url . ');' : ''; ?>
