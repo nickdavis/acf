@@ -190,7 +190,7 @@ function columns_class_calculator( $number_of_columns ) {
 	if ( 1 == $number_of_columns ) {
 		return;
 	} else if ( 2 == $number_of_columns ) {
-		return 'medium-6';
+		return 'large-6';
 	} else if ( 3 == $number_of_columns ) {
 		return 'medium-4';
 	} else if ( 4 == $number_of_columns ) {
