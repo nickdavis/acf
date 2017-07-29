@@ -36,13 +36,18 @@ function do_acf_rows_group( $key, $config ) {
 		switch ( $row ) {
 			// Columns layout
 			case 'columns':
+				$case = 'columns';
+
 				$background_color_row        = get_post_meta( get_the_ID(), $key . '_' . $count . '_background_color', true );
 				$background_color_row_bottom = get_post_meta( get_the_ID(), $key . '_' . $count . '_background_color_bottom', true );
-				$css_class               = get_post_meta( get_the_ID(), $key . '_' . $count . '_css_class', true );
-				$title                   = get_post_meta( get_the_ID(), $key . '_' . $count . '_title', true );
-				$columns                 = get_post_meta( get_the_ID(), $key . '_' . $count . '_column', true );
-				$button_text             = get_post_meta( get_the_ID(), $key . '_' . $count . '_button_text', true );
-				$button_link             = get_post_meta( get_the_ID(), $key . '_' . $count . '_button_link', true );
+				$css_class                   = get_post_meta( get_the_ID(), $key . '_' . $count . '_css_class', true );
+				$title                       = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_title', true );
+				if ( empty ( $title ) ) {
+					$title = get_post_meta( get_the_ID(), $key . '_' . $count . '_title', true );
+				}
+				$columns     = get_post_meta( get_the_ID(), $key . '_' . $count . '_column', true );
+				$button_text = get_post_meta( get_the_ID(), $key . '_' . $count . '_button_text', true );
+				$button_link = get_post_meta( get_the_ID(), $key . '_' . $count . '_button_link', true );
 
 				if ( ! empty( $columns ) ) {
 					$column_grid_class = columns_class_calculator( $columns );
@@ -140,13 +145,12 @@ function do_acf_rows_group( $key, $config ) {
 				break;
 
 			// Pricing Table layout
-			case
-				'pricing-table':
+			case 'pricing-table':
 				$case = 'pricing-table';
 
-				$title    = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_title', true );
-				$text     = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_text', true );
-				$columns  = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_column', true );
+				$title   = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_title', true );
+				$text    = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_text', true );
+				$columns = get_post_meta( get_the_ID(), $key . '_' . $count . '_' . $case . '_column', true );
 
 				$column_grid_class = columns_class_calculator( $columns );
 

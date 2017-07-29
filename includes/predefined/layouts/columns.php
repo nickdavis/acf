@@ -30,7 +30,7 @@ function get_acf_columns_layout() {
 			array(
 				'key'   => $key . '_title',
 				'label' => 'Title',
-				'name'  => 'title',
+				'name'  => $key . '_title',
 				'type'  => 'text',
 			),
 			array(
