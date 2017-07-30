@@ -196,10 +196,10 @@ function columns_class_calculator( $number_of_columns ) {
 	} else if ( 2 == $number_of_columns ) {
 		return 'large-6';
 	} else if ( 3 == $number_of_columns ) {
-		return 'medium-4';
+		return 'large-4';
 	} else if ( 4 == $number_of_columns ) {
-		return 'medium-3';
+		return 'medium-6 large-3';
 	} else {
-		return 'medium-4';
+		return 'large-4';
 	}
 }
