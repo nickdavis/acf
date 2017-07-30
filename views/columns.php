@@ -1,7 +1,7 @@
 <?php use function NickDavis\ACF\Predefined\underscores_to_hypens; ?>
 
 <div
-	class="<?php echo underscores_to_hypens( $key ); ?>-row row-columns acf-row<?= ! empty( $background_color_row ) ? ' row-columns--has-background-color' : ''; ?><?= ! empty( $title ) ? ' row-columns--has-title' : ''; ?><?= ! empty( $button_text ) && ! empty( $button_link ) ? ' row-columns--has-button' : ''; ?>"
+	class="<?php echo underscores_to_hypens( $key ); ?>-row row-columns acf-row<?= ! empty( $background_color_row ) ? ' row-columns--has-background-color' : ''; ?><?= ! empty( $title ) ? ' row-columns--has-title' : ''; ?><?= ! empty( $button_text ) && ! empty( $button_link ) ? ' row-columns--has-button' : ''; ?><?= ! empty( $css_class ) ? ' ' . $css_class : ''; ?>"
 	style="
 	<?= ! empty( $background_color_row ) && empty( $background_color_row_bottom ) ? 'background-color: ' . $background_color_row . ';' : ''; ?>
 	<?= ! empty( $background_color_row ) && ! empty( $background_color_row_bottom ) ? 'background: linear-gradient(' . $background_color_row . ', ' . $background_color_row_bottom . ');' : ''; ?>
@@ -15,7 +15,7 @@
 <?php endif; ?>
 
 <?php if ( $columns ) : ?>
-	<div class="row<?= empty( $background_color_row ) ? ' expanded' : ''; ?><?= ! empty( $css_class ) ? ' ' . $css_class : ''; ?>">
+	<div class="row<?= empty( $background_color_row ) ? ' expanded' : ''; ?>">
 		<?php for ( $columns_count = 0; $columns_count < $columns; $columns_count ++ ) : ?>
 			<?php
 			$background_color    = get_post_meta( get_the_ID(), $key . '_' . $count . '_column_' . $columns_count . '_background_color', true );
