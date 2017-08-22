@@ -34,7 +34,7 @@
 				<?php if ( $columns > 1 ) : ?>
 				<div class="columns-inner">
 				<?php endif; ?>
-					<?php echo wpautop( $text ); ?>
+					<?php echo do_shortcode( wpautop( $text ) ); ?>
 				<?php if ( $columns > 1 ) : ?>
 				</div>
 				<?php endif; ?>
